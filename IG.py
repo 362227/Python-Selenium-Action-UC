@@ -67,8 +67,8 @@ class CookieClickerTest(unittest.TestCase):
         self.password = self.driver.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-child(2) > div > label > input")
         self.login = self.driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]')
 
-        username = os.environ['IG_NAME']
-        password = os.environ['IG_PW']
+        username = sys.argv[1]
+        password = sys.argv[2]
         
         self.username.send_keys(username)
         self.password.send_keys(password)
