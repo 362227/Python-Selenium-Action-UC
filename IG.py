@@ -4,6 +4,7 @@
 
 from selenium import webdriver
 import unittest
+from pyvirtualdisplay import Display
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -12,11 +13,14 @@ from time import sleep
 import subprocess
 import os
 
+display = Display(visible=0, size=(1920, 1080))  
+display.start()
+
 os.system('sudo bin/v2ray -config bin/sw.json &')
 sleep(3)
 cmd = ['curl', '-x', '127.0.0.1:1083', '-L', 'http://www.google.com']
 result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-print(result.stdout)
+#print(result.stdout)
 
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
