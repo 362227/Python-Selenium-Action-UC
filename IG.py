@@ -70,8 +70,11 @@ username = driver.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-chil
 password = driver.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-child(2) > div > label > input")
 login = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]')
 
-username = sys.argv[1]
-password = sys.argv[2]
+#username = sys.argv[1]
+#password = sys.argv[2]
+
+username = "11"
+password = "205"
 
 username.send_keys(username)
 password.send_keys(password)
