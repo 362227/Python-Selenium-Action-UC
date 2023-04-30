@@ -42,52 +42,52 @@ driver.get("https://www.instagram.com")
 
     #def test_search_by_text(self):
 # Get the search box
-#self.search_box = self.driver.find_element(By.NAME, "q")
+#search_box = driver.find_element(By.NAME, "q")
 
 # Enter keyword and send it
-#self.search_box.send_keys("instagram")
-#self.search_box.send_keys(Keys.RETURN)
-#self.search_box.submit()
+#search_box.send_keys("instagram")
+#search_box.send_keys(Keys.RETURN)
+#search_box.submit()
 
 # Get the list of search results
-#lists = self.driver.find_elements(By.LINK_TEXT, '0 cookies - Cookie Clicker - Orteil')
+#lists = driver.find_elements(By.LINK_TEXT, '0 cookies - Cookie Clicker - Orteil')
 #no = len(lists)
-#self.assertEqual(1, len(lists))
-#searchresult = self.driver.find_elements(By.CSS_SELECTOR, "#search > div:nth-child(1)")
+#assertEqual(1, len(lists))
+#searchresult = driver.find_elements(By.CSS_SELECTOR, "#search > div:nth-child(1)")
 #expectedlink = "https://www.instagram.com/?hl=id"
 #for result in searchresult:
     #thelink = result.find_elements(By.CSS_SELECTOR, "a")
     #for href in thelink:
         #listhref = href.get_attribute("href")
         #if expectedlink in listhref:
-            #self.assertEqual(listhref, expectedlink, "There's no link with expected")
+            #assertEqual(listhref, expectedlink, "There's no link with expected")
 #print(lists)
 
 
 
-self.username = self.driver.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-child(1) > div > label > input")
-self.password = self.driver.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-child(2) > div > label > input")
-self.login = self.driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]')
+username = driver.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-child(1) > div > label > input")
+password = driver.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-child(2) > div > label > input")
+login = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]')
 
 username = sys.argv[1]
 password = sys.argv[2]
 
-self.username.send_keys(username)
-self.password.send_keys(password)
-self.login.click()
+username.send_keys(username)
+password.send_keys(password)
+login.click()
 
 sleep(9)
 
 # Navigate to the Messages Page
-#self.message = self.driver.find_element(By.CLASS_NAME, '_aacl _aacp _adda _aacx _aada')
-#self.message.click()
-self.driver.get('https://www.instagram.com')
+#message = driver.find_element(By.CLASS_NAME, '_aacl _aacp _adda _aacx _aada')
+#message.click()
+driver.get('https://www.instagram.com')
 #Not Now for Notifications
-self.notif = self.driver.find_element(By.XPATH, '//button[contains(text(), "以后再说")]')
-self.notif.click()
+notif = driver.find_element(By.XPATH, '//button[contains(text(), "以后再说")]')
+notif.click()
 
 sleep(9)
-page_source = self.driver.page_source
+page_source = driver.page_source
 print(page_source)
 
-self.driver.quit()
+driver.quit()
