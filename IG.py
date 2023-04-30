@@ -12,6 +12,7 @@ from selenium.webdriver.common.keys import Keys
 from time import sleep
 import subprocess
 import os
+import sys
 
 display = Display(visible=0, size=(1920, 1080))  
 display.start()
