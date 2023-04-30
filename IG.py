@@ -12,7 +12,7 @@ from time import sleep
 import subprocess
 import os
 
-subprocess.Popen(['sudo', 'bin/v2ray', '-config bin/sw.json'])
+os.system('sudo bin/v2ray -config bin/sw.json &')
 sleep(3)
 cmd = ['curl', '-x', '127.0.0.1:1083', '-L', 'http://www.google.com']
 result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
