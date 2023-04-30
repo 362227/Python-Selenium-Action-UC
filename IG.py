@@ -9,10 +9,17 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from time import sleep
+import subprocess
+
+subprocess.Popen(['sudo', 'bin/v2ray', '-config bin/sw.json'])
+sleep(3)
+cmd = ['curl', '-x', '127.0.0.1:1083', '-L', 'http://www.google.com']
+result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+print(result.stdout)
 
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
-options.add_argument('--proxy-server=http://127.0.0.1:1011')
+options.add_argument('--proxy-server=http://127.0.0.1:1083')
 options.add_argument('--enable-javascript') # 启用 JavaScript
 options.add_argument('blink-settings=imagesEnabled=false')      # 不加载图片，提升运行速度
 options.add_argument('--no-sandbox')                # 解决DevToolsActivePort文件不存在的报错
@@ -59,8 +66,8 @@ class CookieClickerTest(unittest.TestCase):
         self.password = self.driver.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-child(2) > div > label > input")
         self.login = self.driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]')
 
-        username = ""
-        password = ""
+        username = ${{ secrets.IG_NAME }}
+        password = ${{ secrets.IG_PW }}
 
         self.username.send_keys(username)
         self.password.send_keys(password)
