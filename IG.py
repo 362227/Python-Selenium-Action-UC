@@ -34,11 +34,11 @@ options.add_argument('--hide-scrollbars')           # 隐藏滚动条，应对�
 
 
 # Create browser session
-self.driver = webdriver.Chrome(options=options)
-self.driver.implicitly_wait(20)
-self.driver.maximize_window()
+driver = webdriver.Chrome(options=options)
+driver.implicitly_wait(20)
+driver.maximize_window()
 # Navigate to the application home page
-self.driver.get("https://www.instagram.com")
+driver.get("https://www.instagram.com")
 
     #def test_search_by_text(self):
 # Get the search box
