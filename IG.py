@@ -65,22 +65,19 @@ driver.get("https://www.instagram.com")
 #print(lists)
 
 
-
-username = driver.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-child(1) > div > label > input")
-password = driver.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-child(2) > div > label > input")
+username_input = driver.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-child(1) > div > label > input")
+password_input = driver.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-child(2) > div > label > input")
 login = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]')
 
-#username = sys.argv[1]
-#password = sys.argv[2]
+username_str = sys.argv[1]
+password_str = sys.argv[2]
 
-username = "11"
-password = "205"
 
-username.send_keys(username)
-password.send_keys(password)
+username_input.send_keys(username_str)
+password_input.send_keys(password_str)
 login.click()
 
-sleep(9)
+sleep(7)
 
 # Navigate to the Messages Page
 #message = driver.find_element(By.CLASS_NAME, '_aacl _aacp _adda _aacx _aada')
