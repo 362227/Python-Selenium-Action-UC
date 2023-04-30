@@ -10,6 +10,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 import subprocess
+import os
 
 subprocess.Popen(['sudo', 'bin/v2ray', '-config bin/sw.json'])
 sleep(3)
@@ -66,9 +67,9 @@ class CookieClickerTest(unittest.TestCase):
         self.password = self.driver.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-child(2) > div > label > input")
         self.login = self.driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]')
 
-        username = ${{ secrets.IG_NAME }}
-        password = ${{ secrets.IG_PW }}
-
+        username = os.environ['IG_NAME']
+        password = os.environ['IG_PW']
+        
         self.username.send_keys(username)
         self.password.send_keys(password)
         self.login.click()
