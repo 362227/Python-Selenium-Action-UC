@@ -71,7 +71,8 @@ login = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]')
 
 username_str = sys.argv[1]
 password_str = sys.argv[2]
-
+print(sys.argv[2])
+exit()
 
 username_input.send_keys(username_str)
 password_input.send_keys(password_str)
