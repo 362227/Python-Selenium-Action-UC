@@ -90,8 +90,8 @@ print(page_source)
 with open('./ig.html', 'w', encoding='utf-8') as f:
     f.write(page_source)
 #Not Now for Notifications
-notif = driver.find_element(By.XPATH, '//button[contains(text(), "Not Now")]')
-notif.click()
+#notif = driver.find_element(By.XPATH, '//button[contains(text(), "Not Now")]')
+#notif.click()
 
 sleep(9)
 #page_source = driver.page_source
