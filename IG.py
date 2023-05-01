@@ -79,16 +79,20 @@ login.click()
 
 sleep(7)
 
+
 # Navigate to the Messages Page
 #message = driver.find_element(By.CLASS_NAME, '_aacl _aacp _adda _aacx _aada')
 #message.click()
 driver.get('https://www.instagram.com')
+sleep(5)
+page_source = driver.page_source
+print(page_source)
 #Not Now for Notifications
 notif = driver.find_element(By.XPATH, '//button[contains(text(), "Not Now")]')
 notif.click()
 
 sleep(9)
-page_source = driver.page_source
-print(page_source)
+#page_source = driver.page_source
+#print(page_source)
 
 driver.quit()
