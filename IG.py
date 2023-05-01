@@ -14,5 +14,5 @@ import subprocess
 import os
 import sys
 
-print(sys.argv[2])
+print("密码："+sys.argv[2])
 exit()
