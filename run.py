@@ -16,7 +16,7 @@ os.system('python uc.py https://supjav.com/category/censored-jav/page/6 >> supja
 
 
 #抓javgg
-os.system('python uc.py https://javgg.net/new-post > javgg.html')
+os.system('rm -rf javgg.html; python uc.py https://javgg.net/new-post > javgg.html')
 
 
 
