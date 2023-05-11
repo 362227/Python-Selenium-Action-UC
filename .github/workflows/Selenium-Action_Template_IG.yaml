@@ -31,7 +31,7 @@ jobs:
            sudo apt update && sudo apt install google-chrome-stable -y && google-chrome --version
         
       - name: Running the Python script
-        run:  curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json & sleep 2 && python run.py
+        run:  google-chrome --version && google-chrome-stable --version  curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json & sleep 2 && python run.py
         
       - name: Commit and Push The Results From Python Selenium Action
         run: |
