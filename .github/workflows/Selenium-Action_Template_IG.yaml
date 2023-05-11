@@ -16,7 +16,7 @@ jobs:
       - name: Installing package list
         run: apt list --installed    
       - name: Removing previous chrome instances on runner 
-        run: sudo apt purge google-chrome-stable  && sudo chmod +x bin/v2ray
+        run: sudo apt purge google-chrome-stable  && sudo chmod +x bin/v2ray && sudo apt update && sudo apt install google-chrome-stable
         
        # Need to fetch reqs if needed
       - name: Installing all necessary packages
