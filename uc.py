@@ -43,26 +43,13 @@ else:
 
         def run_all(self):
             try:
-               browser = uc.Chrome(options=self.set_chrome_option())
-            except WebDriverException as e:
-               if 'This version of ChromeDriver only supports Chrome version' in e.msg:
-                  try:
-                    # trying to get correct version from error message
-                    correct_version = int(e.msg.split('Current browser version is ')[1].split('.')[0])
-                  except Exception:
-                    # couldn't parse correct version, raising same exception
-                    raise e
-                  browser = uc.Chrome(options=self.set_chrome_option(),version_main=correct_version)
-               else:
-                  raise e        
-                
-                
-               browser.get(sys.argv[1])  #网站
-               browser.implicitly_wait(200)
-               pageSource = browser.page_source
-               print(pageSource)
+                browser = uc.Chrome(options=self.set_chrome_option())
+                browser.get(sys.argv[1])  #网站
+                browser.implicitly_wait(200)
+                pageSource = browser.page_source
+                print(pageSource)
             finally:
-               browser.quit()
+                browser.quit()
 
         def main(self):
             self.run_all()
