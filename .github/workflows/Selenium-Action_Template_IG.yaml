@@ -28,7 +28,9 @@ jobs:
            sudo chmod +x bin/v2ray
         
       - name: Running the Python script
-        run:  curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json & sleep 2 && python run.py
+        run: |
+           #curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json & sleep 2 && python run.py
+           python uc.py https://github.com/
         
       - name: Commit and Push The Results From Python Selenium Action
         run: |
