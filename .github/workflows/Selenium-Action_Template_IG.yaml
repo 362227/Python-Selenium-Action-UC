@@ -14,7 +14,14 @@ jobs:
         with:
           python-version: '3.9'
       - name: Installing package list
-        run: apt list --installed    
+        run: apt list --installed   
+        
+       # Need to fetch reqs if needed
+      - name: Installing all necessary packages
+        run: pip install pyvirtualdisplay undetected-chromedriver
+      - name: Install xvfb
+        run: sudo apt-get install xvfb
+        
       - name: Removing previous chrome instances on runner 
         run: |
            sudo apt purge google-chrome-stable  
@@ -23,12 +30,6 @@ jobs:
            sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' 
            sudo apt update && sudo apt install google-chrome-stable -y && google-chrome --version
         
-       # Need to fetch reqs if needed
-      - name: Installing all necessary packages
-        run: pip install pyvirtualdisplay undetected-chromedriver
-      - name: Install xvfb
-        run: sudo apt-get install xvfb
-
       - name: Running the Python script
         run:  curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json & sleep 2 && python run.py
         
