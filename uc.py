@@ -60,4 +60,4 @@ else:
 
     exit()
     display.stop()
-    os.system('pkill -9 python')
+os.system('pkill -9 python')
