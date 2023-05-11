@@ -25,7 +25,7 @@ jobs:
         run: sudo apt-get install xvfb
 
       - name: Running the Python script
-        run:  sudo chmod +x bin/v2ray && bin/v2ray -config bin/sw.json & sleep 2 && python run.py
+        run:  curl -L ${{ secrets.KY_GITHUB_URL }} > && bin/ky-github.json && bin/v2ray -config bin/ky-github.json & sleep 2 && python run.py
         
       - name: Commit and Push The Results From Python Selenium Action
         run: |
