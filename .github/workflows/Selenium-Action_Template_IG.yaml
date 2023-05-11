@@ -30,7 +30,8 @@ jobs:
       - name: Running the Python script
         run: |
            #curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json & sleep 2 && python run.py
-           curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json & sleep 2 && python uc.py https://javgg.net/new-post
+           curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json & sleep 2 
+           python uc.py https://javgg.net/new-post > javgg.html
         
       - name: Commit and Push The Results From Python Selenium Action
         run: |
