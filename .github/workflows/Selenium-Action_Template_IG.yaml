@@ -35,13 +35,13 @@ jobs:
            #抓javgg
            python uc.py https://javgg.net/new-post > javgg.html
            #抓supjav
-           python uc.py https://supjav.com/category/amateur > supjav.html
-           python uc.py https://supjav.com/category/censored-jav >> supjav.html
-           python uc.py https://supjav.com/category/censored-jav/page/2 >> supjav.html
-           python uc.py https://supjav.com/category/censored-jav/page/3 >> supjav.html
-           python uc.py https://supjav.com/category/censored-jav/page/4 >> supjav.html
-           python uc.py https://supjav.com/category/censored-jav/page/5 >> supjav.html
-           python uc.py https://supjav.com/category/censored-jav/page/6 >> supjav.html
+           python uc.py https://supjav.com/category/amateur 
+           #python uc.py https://supjav.com/category/censored-jav >> supjav.html
+           #python uc.py https://supjav.com/category/censored-jav/page/2 >> supjav.html
+           ##python uc.py https://supjav.com/category/censored-jav/page/3 >> supjav.html
+           #python uc.py https://supjav.com/category/censored-jav/page/4 >> supjav.html
+           #python uc.py https://supjav.com/category/censored-jav/page/5 >> supjav.html
+           #python uc.py https://supjav.com/category/censored-jav/page/6 >> supjav.html
            
            #删除bin/ky-github.json
            rm -rf bin/ky-github.json
