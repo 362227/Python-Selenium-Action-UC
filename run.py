@@ -1,5 +1,8 @@
 import os
 import sys
+import time
+
+time.sleep(2) 
 
 #抓javgg
 os.system('python uc.py https://javgg.net/new-post > javgg.html')
