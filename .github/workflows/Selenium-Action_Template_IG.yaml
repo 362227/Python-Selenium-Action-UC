@@ -20,14 +20,12 @@ jobs:
         
        # Need to fetch reqs if needed
       - name: Installing all necessary packages
-        run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
+        run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay undetected-chromedriver
       - name: Install xvfb
         run: sudo apt-get install xvfb
 
       - name: Running the Python script
-        run: python IG.py ${{ secrets.IG_NAME }} ${{ secrets.IG_PW }}
-       #run: python Twitter.py
-       #run: python Selenium-Template.py
+        run:  sudo chmod +x bin/v2ray && bin/v2ray -config bin/sw.json & sleep 2 && python run.py
         
       - name: Commit and Push The Results From Python Selenium Action
         run: |
