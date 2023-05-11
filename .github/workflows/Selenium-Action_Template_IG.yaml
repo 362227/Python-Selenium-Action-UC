@@ -30,8 +30,20 @@ jobs:
       - name: Running the Python script
         run: |
            #curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json & sleep 2 && python run.py
-           curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json & sleep 2 
+           curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json
+           sleep 4
+           #抓supjav
            python uc.py https://javgg.net/new-post > javgg.html
+           #抓supjav
+           python uc.py https://supjav.com/category/amateur > supjav.html')
+           python uc.py https://supjav.com/category/censored-jav >> supjav.html')
+           python uc.py https://supjav.com/category/censored-jav/page/2 >> supjav.html')
+           python uc.py https://supjav.com/category/censored-jav/page/3 >> supjav.html')
+           python uc.py https://supjav.com/category/censored-jav/page/4 >> supjav.html')
+           python uc.py https://supjav.com/category/censored-jav/page/5 >> supjav.html')
+           python uc.py https://supjav.com/category/censored-jav/page/6 >> supjav.html')
+           
+           
         
       - name: Commit and Push The Results From Python Selenium Action
         run: |
