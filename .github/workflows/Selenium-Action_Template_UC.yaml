@@ -36,6 +36,7 @@ jobs:
            python uc.py https://javgg.net/new-post > javgg.html
            #抓supjav
            python uc.py https://supjav.com/category/amateur > supjav.html
+           python uc.py https://supjav.com/category/uncensored-jav > supjav.html
            python uc.py https://supjav.com/category/censored-jav >> supjav.html
            python uc.py https://supjav.com/category/censored-jav/page/2 >> supjav.html
            python uc.py https://supjav.com/category/censored-jav/page/3 >> supjav.html
