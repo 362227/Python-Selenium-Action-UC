@@ -17,8 +17,8 @@ import re
 import subprocess
 
 
-os.system("pkill -9 chrome")
-os.system('killall chrome')
+#os.system("pkill -9 chrome")
+#os.system('killall chrome')
 
 
 url = "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json"
