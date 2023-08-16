@@ -18,12 +18,10 @@ import urllib.request
 os.system("pkill -9 chrome")
 os.system('killall chrome')
 
-try:
-    service = Service(ChromeDriverManager().install())
-except ValueError:
-    latest_chromedriver_version_url = "https://chromedriver.storage.googleapis.com/LATEST_RELEASE"
-    latest_chromedriver_version = urllib.request.urlopen(latest_chromedriver_version_url).read().decode('utf-8')
-    service = Service(ChromeDriverManager(version=latest_chromedriver_version).install())
+
+latest_chromedriver_version_url = "https://chromedriver.storage.googleapis.com/LATEST_RELEASE"
+latest_chromedriver_version = urllib.request.urlopen(latest_chromedriver_version_url).read().decode('utf-8')
+service = Service(ChromeDriverManager(version=latest_chromedriver_version).install())
 
 
 
