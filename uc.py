@@ -14,14 +14,27 @@ import os
 import sys
 import requests
 import urllib.request
+import re
 
 os.system("pkill -9 chrome")
 os.system('killall chrome')
 
 
-latest_chromedriver_version_url = "https://chromedriver.storage.googleapis.com/LATEST_RELEASE"
-latest_chromedriver_version = urllib.request.urlopen(latest_chromedriver_version_url).read().decode('utf-8')
-service = Service(ChromeDriverManager(version=latest_chromedriver_version).install())
+url = "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json"
+response = requests.get(url).text
+
+m = re.match(r'.+?"url\"\:\"(https\:\/\/[\s\S]{2,85}chromedriver-linux64.zip).*', response)
+zip_url  = m.group(1)
+
+
+os.system(f"curl -o chromedriver-linux64.zip {zip_url}")
+
+# 解压文件
+os.system("unzip chromedriver-linux64.zip -d /usr/")
+
+
+chromedriver_path = '/usr/chromedriver-linux64/chromedriver'
+service = Service(executable_path=chromedriver_path)
 
 
 
