@@ -7,7 +7,7 @@ from pyvirtualdisplay import Display
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
+from chromedriver_py import binary_path 
 import undetected_chromedriver as uc
 import os
 import sys
@@ -16,7 +16,8 @@ import requests
 os.system("pkill -9 chrome")
 os.system('killall chrome')
 
-path = ChromeDriverManager().install(force_latest=True)
+svc = uc.ChromeService(executable_path=binary_path)
+
 
 if requests.get(sys.argv[1]).status_code == 200:
     page = requests.get(sys.argv[1])
@@ -43,7 +44,7 @@ else:
         def run_all(self):
             try:
                 self.set_chrome_option()
-                browser = uc.Chrome(executable_path=path, options=self.chrome_options)
+                browser = uc.Chrome(service=svc, options=self.chrome_options)
                 browser.get(sys.argv[1])  #网站
                 browser.implicitly_wait(200)
                 pageSource = browser.page_source
