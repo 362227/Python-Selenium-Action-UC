@@ -32,7 +32,7 @@ zip_url  = m.group(1)
 os.system(f"curl -o chromedriver-linux64.zip {zip_url}")
 
 # 解压文件
-os.system("unzip chromedriver-linux64.zip/ -d /opt/")
+os.system("unzip chromedriver-linux64.zip -d /opt/")
 
 
 s=Service('/opt/chromedriver-linux64/chromedriver')
