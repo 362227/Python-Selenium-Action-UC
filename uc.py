@@ -18,6 +18,7 @@ os.system('killall chrome')
 
 path = ChromeDriverManager().install()
 
+
 if requests.get(sys.argv[1]).status_code == 200:
     page = requests.get(sys.argv[1])
     pageSource = page.content.decode('utf-8')
@@ -39,7 +40,7 @@ else:
             chrome_options.add_argument('--no-sandbox')
             chrome_options.add_argument('--disable-dev-shm-usage')
             chrome_options.add_argument('blink-settings=imagesEnabled=false')
-            chromedriver_path = '/usr/local/bin/chromedriver'
+            
             
             return chrome_options
 
