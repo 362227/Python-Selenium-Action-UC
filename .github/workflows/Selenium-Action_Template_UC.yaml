@@ -18,7 +18,7 @@ jobs:
         
        # Need to fetch reqs if needed
       - name: Installing all necessary packages
-        run: pip install pyvirtualdisplay undetected-chromedriver webdriver_manager
+        run: pip install pyvirtualdisplay git+https://github.com/jdholtz/undetected-chromedriver/tree/25877fd95a145fef8248e37ae9dbe7b6364caab2
       - name: Install xvfb
         run: sudo apt-get install xvfb
         
