@@ -35,7 +35,6 @@ os.system(f"curl -o chromedriver-linux64.zip {zip_url}")
 os.system("unzip -o chromedriver-linux64.zip -d /opt/")
 
 
-s=Service('/opt/chromedriver-linux64/chromedriver')
 chromedriver_version = subprocess.check_output("/opt/chromedriver-linux64/chromedriver --version", shell=True, text=True)
 print("chromedriver版本：" + chromedriver_version)
 
@@ -67,7 +66,7 @@ else:
         def run_all(self):
             try:
                 self.set_chrome_option()
-                browser = uc.Chrome(service=s, options=self.chrome_options)
+                browser = uc.Chrome(options=self.chrome_options, driver_executable_path= '/opt/chromedriver-linux64/chromedriver')
                 browser.get(sys.argv[1])  #网站
                 browser.implicitly_wait(200)
                 pageSource = browser.page_source
