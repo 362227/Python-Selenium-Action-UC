@@ -7,7 +7,7 @@ from pyvirtualdisplay import Display
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-from selenium.webdriver.common.service import Service
+from undetected_chromedriver.v2 import ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 import undetected_chromedriver as uc
 import os
@@ -19,11 +19,11 @@ os.system("pkill -9 chrome")
 os.system('killall chrome')
 
 try:
-    service = Service(ChromeDriverManager().install())
+    service = ChromeService(executable_path=ChromeDriverManager().install())
 except ValueError:
     latest_chromedriver_version_url = "https://chromedriver.storage.googleapis.com/LATEST_RELEASE"
     latest_chromedriver_version = urllib.request.urlopen(latest_chromedriver_version_url).read().decode('utf-8')
-    service = Service(ChromeDriverManager(version=latest_chromedriver_version).install())
+    service = ChromeService(executable_path=ChromeDriverManager(version=latest_chromedriver_version).install())
 
 
 if requests.get(sys.argv[1]).status_code == 200:
