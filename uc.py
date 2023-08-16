@@ -64,7 +64,7 @@ else:
         def run_all(self):
             try:
                 self.set_chrome_option()
-                browser = uc.Chrome(options=self.chrome_options, driver_executable_path= '/opt/chromedriver-linux64/chromedriver')
+                browser = uc.Chrome(options=self.chrome_options, driver_executable_path= '/opt/chromedriver-linux64/chromedriver', version_main=106)
                 browser.get(sys.argv[1])  #网站
                 browser.implicitly_wait(200)
                 pageSource = browser.page_source
