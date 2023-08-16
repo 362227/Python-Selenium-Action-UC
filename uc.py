@@ -7,7 +7,7 @@ from pyvirtualdisplay import Display
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-from undetected_chromedriver.v2 import ChromeService
+from undetected_chromedriver import ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 import undetected_chromedriver as uc
 import os
