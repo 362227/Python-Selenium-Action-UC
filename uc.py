@@ -17,7 +17,9 @@ import urllib.request
 import re
 import subprocess
 
-
+chromedriver_path = uc.utils.get_chromedriver_path()
+print("Chromedriver 路径：" + chromedriver_path)
+exit()
 os.system("pkill -9 chrome")
 os.system('killall chrome')
 
