@@ -17,9 +17,7 @@ import urllib.request
 import re
 import subprocess
 
-chromedriver_path = uc.utils.get_chromedriver_path()
-print("Chromedriver 路径：" + chromedriver_path)
-exit()
+
 os.system("pkill -9 chrome")
 os.system('killall chrome')
 
@@ -39,7 +37,6 @@ os.system("unzip -o chromedriver-linux64.zip -d /opt/")
 
 chromedriver_version = subprocess.check_output("/opt/chromedriver-linux64/chromedriver --version", shell=True, text=True)
 print("chromedriver版本：" + chromedriver_version)
-
 
 
 
