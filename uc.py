@@ -12,6 +12,7 @@ import undetected_chromedriver as uc
 import os
 import sys
 import requests
+import urllib.request
 
 os.system("pkill -9 chrome")
 os.system('killall chrome')
