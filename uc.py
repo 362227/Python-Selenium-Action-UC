@@ -16,7 +16,11 @@ import urllib.request
 import re
 import subprocess
 
-os.system(f"google-chrome --version")
+# 运行命令并获取输出
+version_output = os.popen("google-chrome --version").read()
+
+# 输出版本信息
+print("Google Chrome 版本：" + version_output)
 exit()
 os.system("pkill -9 chrome")
 os.system('killall chrome')
