@@ -39,7 +39,7 @@ else:
         def run_all(self):
             try:
                 self.set_chrome_option()
-                browser = uc.Chrome(executable_path=binary_path.get_path(), options=self.chrome_options)
+                browser = uc.Chrome(executable_path=binary_path, options=self.chrome_options)
                 browser.get(sys.argv[1])
                 browser.implicitly_wait(200)
                 pageSource = browser.page_source
