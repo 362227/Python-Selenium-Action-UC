@@ -32,11 +32,11 @@ zip_url  = m.group(1)
 os.system(f"curl -o chromedriver-linux64.zip {zip_url}")
 
 # 解压文件
-os.system("unzip chromedriver-linux64.zip/")
+os.system("unzip chromedriver-linux64.zip/ -d /opt/")
 
 
-s=Service('chromedriver-linux64/chromedriver')
-chromedriver_version = subprocess.check_output("chromedriver-linux64/chromedriver --version", shell=True, text=True)
+s=Service('/opt/chromedriver-linux64/chromedriver')
+chromedriver_version = subprocess.check_output("/opt/chromedriver-linux64/chromedriver --version", shell=True, text=True)
 print("chromedriver版本：" + chromedriver_version)
 
 
