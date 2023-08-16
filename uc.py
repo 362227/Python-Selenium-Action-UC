@@ -15,6 +15,8 @@ import sys
 import requests
 import urllib.request
 import re
+import subprocess
+
 
 os.system("pkill -9 chrome")
 os.system('killall chrome')
@@ -34,7 +36,8 @@ os.system("unzip chromedriver-linux64.zip -d /usr/")
 
 
 s=Service('/usr/chromedriver-linux64/chromedriver')
-print("chromedriver版本：" + os.system("/usr/chromedriver-linux64/chromedriver --version"))
+chromedriver_version = subprocess.check_output("/usr/chromedriver-linux64/chromedriver --version", shell=True, text=True)
+print("chromedriver版本：" + chromedriver_version)
 
 
 
