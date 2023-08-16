@@ -17,7 +17,6 @@ os.system("pkill -9 chrome")
 os.system('killall chrome')
 
 
-path = install()
 
 if requests.get(sys.argv[1]).status_code == 200:
     page = requests.get(sys.argv[1])
