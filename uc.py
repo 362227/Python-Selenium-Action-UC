@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 from chromedriver_py import binary_path 
-import undetected_chromedriver.v2 as uc
+import undetected_chromedriver as uc
 import os
 import sys
 import requests
