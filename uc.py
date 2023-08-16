@@ -18,7 +18,6 @@ os.system('killall chrome')
 
 path = ChromeDriverManager().install()
 
-
 if requests.get(sys.argv[1]).status_code == 200:
     page = requests.get(sys.argv[1])
     pageSource = page.content.decode('utf-8')
@@ -29,24 +28,22 @@ else:
 
     class Demo:
         def set_chrome_option(self):
-            chrome_options = uc.ChromeOptions()
+            self.chrome_options = uc.ChromeOptions()
             # chrome_options.headless = True
-            chrome_options.add_experimental_option('prefs', {'profile.default_content_setting_values': {'notifications': 2}})
-            chrome_options.add_argument('disable-infobars')
-            chrome_options.add_argument('--proxy-server=http://127.0.0.1:1085')
-            chrome_options.add_argument("--window-size=1920,1080")
-            # chrome_options.add_argument('--headless')
-            chrome_options.add_argument('--disable-gpu')
-            chrome_options.add_argument('--no-sandbox')
-            chrome_options.add_argument('--disable-dev-shm-usage')
-            chrome_options.add_argument('blink-settings=imagesEnabled=false')
+            self.chrome_options.add_experimental_option('prefs', {'profile.default_content_setting_values': {'notifications': 2}})
+            self.chrome_options.add_argument('disable-infobars')
+            self.chrome_options.add_argument('--proxy-server=http://127.0.0.1:1085')
+            self.chrome_options.add_argument("--window-size=1920,1080")
+            # self.chrome_options.add_argument('--headless')
+            self.chrome_options.add_argument('--disable-gpu')
+            self.chrome_options.add_argument('--no-sandbox')
+            self.chrome_options.add_argument('--disable-dev-shm-usage')
+            self.chrome_options.add_argument('blink-settings=imagesEnabled=false')
             
-            
-            return chrome_options
-
         def run_all(self):
             try:
-                browser = uc.Chrome(executable_path=path, options=chrome_options)
+                self.set_chrome_option()
+                browser = uc.Chrome(executable_path=path, options=self.chrome_options)
                 browser.get(sys.argv[1])  #网站
                 browser.implicitly_wait(200)
                 pageSource = browser.page_source
@@ -60,7 +57,6 @@ else:
     if __name__ == "__main__":
         demo = Demo()
         demo.main()
-
     exit()
     display.stop()
 os.system('pkill -9 python')
