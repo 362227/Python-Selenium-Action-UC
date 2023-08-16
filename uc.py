@@ -16,12 +16,7 @@ import urllib.request
 import re
 import subprocess
 
-# 运行命令并获取输出
-version_output = os.popen("google-chrome --version").read()
 
-# 输出版本信息
-print("Google Chrome 版本：" + version_output)
-exit()
 os.system("pkill -9 chrome")
 os.system('killall chrome')
 
@@ -65,11 +60,12 @@ else:
             self.chrome_options.add_argument('--no-sandbox')
             self.chrome_options.add_argument('--disable-dev-shm-usage')
             self.chrome_options.add_argument('blink-settings=imagesEnabled=false')
-            
+            self.chrome_options.binary_location = "/usr/bin/google-chrome"        
         def run_all(self):
             try:
                 self.set_chrome_option()
-                browser = uc.Chrome(options=self.chrome_options, driver_executable_path= '/opt/chromedriver-linux64/chromedriver', version_main=106)
+                
+                browser = uc.Chrome(options=self.chrome_options, driver_executable_path= '/opt/chromedriver-linux64/chromedriver')
                 browser.get(sys.argv[1])  #网站
                 browser.implicitly_wait(200)
                 pageSource = browser.page_source
