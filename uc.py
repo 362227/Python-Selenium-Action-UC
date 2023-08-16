@@ -16,7 +16,7 @@ import requests
 os.system("pkill -9 chrome")
 os.system('killall chrome')
 
-path = ChromeDriverManager().install()
+path = ChromeDriverManager().install(force_latest=True)
 
 if requests.get(sys.argv[1]).status_code == 200:
     page = requests.get(sys.argv[1])
