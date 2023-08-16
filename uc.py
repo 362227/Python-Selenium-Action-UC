@@ -7,9 +7,7 @@ from pyvirtualdisplay import Display
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-#from chromedriver_autoinstaller import check_chrome_version
-from chromedriver_autoinstaller import get_chrome_version
-from chromedriver_autoinstaller import install
+from webdriver_manager.chrome import ChromeDriverManager
 import undetected_chromedriver as uc
 import os
 import sys
@@ -48,7 +46,8 @@ else:
 
         def run_all(self):
             try:
-                browser = uc.Chrome(executable_path=path, options=self.set_chrome_option())
+                path = ChromeDriverManager().install()
+                browser = uc.Chrome(executable_path=path, options=chrome_options)
                 browser.get(sys.argv[1])  #网站
                 browser.implicitly_wait(200)
                 pageSource = browser.page_source
