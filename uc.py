@@ -37,13 +37,13 @@ else:
             chrome_options.add_argument('--no-sandbox')
             chrome_options.add_argument('--disable-dev-shm-usage')
             chrome_options.add_argument('blink-settings=imagesEnabled=false')
-            
+            chromedriver_path = '/usr/local/bin/chromedriver'
             
             return chrome_options
 
         def run_all(self):
             try:
-                browser = uc.Chrome(options=self.set_chrome_option())
+                browser = uc.Chrome(executable_path=chromedriver_path, options=self.set_chrome_option())
                 browser.get(sys.argv[1])  #网站
                 browser.implicitly_wait(200)
                 pageSource = browser.page_source
