@@ -12,13 +12,13 @@ jobs:
       - name: Setting up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: '3.10'
       - name: Installing package list
         run: apt list --installed   
         
        # Need to fetch reqs if needed
       - name: Installing all necessary packages
-        run: pip install pyvirtualdisplay git+https://github.com/jdholtz/undetected-chromedriver/tree/25877fd95a145fef8248e37ae9dbe7b6364caab2
+        run: pip install pyvirtualdisplay undetected-chromedriver
       - name: Install xvfb
         run: sudo apt-get install xvfb
         
