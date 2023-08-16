@@ -8,10 +8,13 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 from chromedriver_py import binary_path 
+from chromedriver_py import chromedriver_version
 import undetected_chromedriver as uc
 import os
 import sys
 import requests
+
+print(chromedriver_version())
 
 os.system("pkill -9 chrome")
 os.system('killall chrome')
