@@ -28,7 +28,7 @@ else:
 
     class Demo:
         def set_chrome_option(self):
-            chrome_options = uc.ChromeOptions()
+            self.chrome_options = uc.ChromeOptions()
             # chrome_options.headless = True
             chrome_options.add_experimental_option('prefs', {'profile.default_content_setting_values': {'notifications': 2}})
             chrome_options.add_argument('disable-infobars')
@@ -45,6 +45,7 @@ else:
 
         def run_all(self):
             try:
+                self.set_chrome_option()
                 path = ChromeDriverManager().install()
                 browser = uc.Chrome(executable_path=path, options=chrome_options)
                 browser.get(sys.argv[1])  #网站
