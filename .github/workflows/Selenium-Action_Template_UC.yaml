@@ -48,7 +48,6 @@ jobs:
            python uc.py https://supjav.com/category/censored-jav/page/5 >> supjav.html
            python uc.py https://supjav.com/category/censored-jav/page/6 >> supjav.html
            python uc.py https://supjav.com/category/censored-jav/page/7 >> supjav.html
-           python uc.py https://apibay.org/q.php?q=category%3A505 >> thepiratebay.html
            
            #删除bin/ky-github.json
            rm -rf bin/ky-github.json
