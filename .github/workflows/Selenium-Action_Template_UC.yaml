@@ -37,18 +37,18 @@ jobs:
            curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json &
            sleep 4
            #抓javgg
-           python uc.py https://javgg.net/new-post > javgg.html
-           python uc.py https://javgg.net/new-post/page/2/ > javgg.html
+           #python uc.py https://javgg.net/new-post > javgg.html
+           #python uc.py https://javgg.net/new-post/page/2/ > javgg.html
            #抓supjav
            python uc.py https://supjav.com/ja/category/amateur > supjav.html
            python uc.py https://supjav.com/ja/category/amateur/page/2 > supjav.html
-           python uc.py https://supjav.com/ja/category/censored-jav >> supjav.html
-           python uc.py https://supjav.com/ja/category/censored-jav/page/2 >> supjav.html
-           python uc.py https://supjav.com/ja/category/censored-jav/page/3 >> supjav.html
-           python uc.py https://supjav.com/ja/category/censored-jav/page/4 >> supjav.html
-           python uc.py https://supjav.com/ja/category/censored-jav/page/5 >> supjav.html
-           python uc.py https://supjav.com/ja/category/censored-jav/page/6 >> supjav.html
-           python uc.py https://supjav.com/ja/category/censored-jav/page/7 >> supjav.html
+           #python uc.py https://supjav.com/ja/category/censored-jav >> supjav.html
+           #python uc.py https://supjav.com/ja/category/censored-jav/page/2 >> supjav.html
+           #python uc.py https://supjav.com/ja/category/censored-jav/page/3 >> supjav.html
+           #python uc.py https://supjav.com/ja/category/censored-jav/page/4 >> supjav.html
+           #python uc.py https://supjav.com/ja/category/censored-jav/page/5 >> supjav.html
+           #python uc.py https://supjav.com/ja/category/censored-jav/page/6 >> supjav.html
+           #python uc.py https://supjav.com/ja/category/censored-jav/page/7 >> supjav.html
            python uc.py https://supjav.com/ja/category/censored-jav/page/8 >> supjav.html
            
            #删除bin/ky-github.json
