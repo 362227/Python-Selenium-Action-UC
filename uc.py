@@ -53,7 +53,7 @@ else:
             # chrome_options.headless = True
             self.chrome_options.add_experimental_option('prefs', {'profile.default_content_setting_values': {'notifications': 2}})
             self.chrome_options.add_argument('disable-infobars')
-            self.chrome_options.add_argument('--proxy-server=http://127.0.0.1:1085')
+           # self.chrome_options.add_argument('--proxy-server=http://127.0.0.1:1085')
             self.chrome_options.add_argument("--window-size=1920,1080")
             # self.chrome_options.add_argument('--headless')
             self.chrome_options.add_argument('--disable-gpu')
