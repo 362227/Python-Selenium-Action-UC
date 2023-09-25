@@ -51,6 +51,7 @@ else:
         def set_chrome_option(self):
             self.chrome_options = uc.ChromeOptions()
             # chrome_options.headless = True
+            self.chrome_options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36')
             self.chrome_options.add_experimental_option('prefs', {'profile.default_content_setting_values': {'notifications': 2}})
             self.chrome_options.add_argument('disable-infobars')
            # self.chrome_options.add_argument('--proxy-server=http://127.0.0.1:1085')
