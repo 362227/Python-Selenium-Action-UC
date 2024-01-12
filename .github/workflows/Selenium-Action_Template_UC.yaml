@@ -27,6 +27,7 @@ jobs:
            sudo apt purge google-chrome-stable && rm -rf youtube*.zip
            curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
            sudo dpkg -i google-chrome-stable_current_amd64.deb
+           sudo rm -rf google-chrome-stable_current_amd64.deb
            google-chrome --version
            /usr/bin/google-chrome --version
            sudo chmod +x bin/v2ray
@@ -52,7 +53,7 @@ jobs:
            python uc.py https://supjav.com/ja/category/censored-jav/page/8 >> supjav.html
            
            #bitsearch
-           python uc.py https://bitsearch.to/search?q=xxx&sort=date&page=1 >> bitsearch.html
+           python uc.py https://bitsearch.to/search?q=xxx&sort=date&page=1 > bitsearch.html
            python uc.py https://bitsearch.to/search?q=xxx&sort=date&page=2 >> bitsearch.html
            python uc.py https://bitsearch.to/search?q=xxx&sort=date&page=3 >> bitsearch.html
            python uc.py https://bitsearch.to/search?q=xxx&sort=date&page=4 >> bitsearch.html
