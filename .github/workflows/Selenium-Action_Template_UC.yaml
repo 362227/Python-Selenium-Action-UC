@@ -52,18 +52,6 @@ jobs:
            python uc.py https://supjav.com/ja/category/censored-jav/page/7 >> supjav.html
            python uc.py https://supjav.com/ja/category/censored-jav/page/8 >> supjav.html
            
-           #bitsearch
-           python uc.py https://bitsearch.to/search?q=xxx&sort=date&page=1 > bitsearch.html
-           python uc.py https://bitsearch.to/search?q=xxx&sort=date&page=2 >> bitsearch.html
-           python uc.py https://bitsearch.to/search?q=xxx&sort=date&page=3 >> bitsearch.html
-           python uc.py https://bitsearch.to/search?q=xxx&sort=date&page=4 >> bitsearch.html
-           python uc.py https://bitsearch.to/search?q=xxx&sort=date&page=5 >> bitsearch.html
-           python uc.py https://bitsearch.to/search?q=xxx&sort=date&page=6 >> bitsearch.html
-           python uc.py https://bitsearch.to/search?q=xxx&sort=date&page=7 >> bitsearch.html
-           python uc.py https://bitsearch.to/search?q=xxx&sort=date&page=8 >> bitsearch.html
-           python uc.py https://bitsearch.to/search?q=xxx&sort=date&page=9 >> bitsearch.html
-           python uc.py https://bitsearch.to/search?q=xxx&sort=date&page=10 >> bitsearch.html
-           
            #删除bin/ky-github.json
            rm -rf bin/ky-github.json
            
