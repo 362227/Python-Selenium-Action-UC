@@ -34,8 +34,10 @@ jobs:
         
       - name: Running the Python script
         run: |
+           curl -L https://github.com/362227/Python-Selenium-Action/raw/main/gost > gost && sudo chmod 755 ./gost && ./gost -L=:1087 ${{ secrets.GOST_GITHUB_GOST }} &
+           sleep 5 && echo 代理ip：&& curl --proxy 127.0.0.1:1087 ifconfig.me
            #curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json & sleep 2 && python run.py
-           curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json &
+           #curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json &
            sleep 4
            #抓javgg
            python uc.py https://javgg.net/new-post > javgg.html
