@@ -39,8 +39,8 @@ os.system("unzip -o chromedriver-linux64.zip -d /opt/")
 chromedriver_version = subprocess.check_output("/opt/chromedriver-linux64/chromedriver --version", shell=True, text=True)
 print("chromedriver版本:" + chromedriver_version)
 
-print("代理ip")
-os.system("curl --proxy 127.0.0.1:1087 ifconfig.me")
+IP = os.popen("curl --proxy 127.0.0.1:1087 ifconfig.me").read().strip()
+print("代理ip:", IP)
 
 if requests.get(sys.argv[1]).status_code == 200:
     page = requests.get(sys.argv[1])
